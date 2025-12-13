@@ -46,13 +46,15 @@ function Features() {
   return (
     <section className="py-8 pb-24">
       <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
-        <SectionTitle title={"Features"} color={"text-dark"} />
+        <div className="pb-6">
+          <SectionTitle title={"Features"} color={"text-dark"} />
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((f, i) => (
             <div
               key={i}
-              className="flex flex-col gap-4 text-left p-6 rounded-2xl bg-primary/2 border border-primary/10 hover:shadow-xl"
+              className="flex flex-col gap-4 text-left p-6 rounded-2xl bg-primary/2 border border-primary/10 hover:shadow-xl duration-300"
             >
               <div className="flex items-center">
                 <span className="p-3 rounded-xl text-white bg-linear-to-b from-primary to-primary/80 flex items-center justify-center">
