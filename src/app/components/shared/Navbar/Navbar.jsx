@@ -1,7 +1,9 @@
 "use client";
 
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LinkButton from "../../ui/link/LinkButton";
 
 export const navlinks = [
   {
@@ -29,28 +31,28 @@ export const navlinks = [
 const Navbar = () => {
   const path = usePathname();
   return (
-    <section className="py-4 bg-white fixed w-full top-0 border-b border-gray/40">
-      <nav className="flex justify-between items-center max-w-360 mx-auto w-11/12">
+    <section className="py-3 bg-white/60 backdrop-blur-lg fixed w-full top-0 border-b border-gray/10">
+      <nav className="flex justify-between items-center max-w-310 mx-auto w-[95%] lg:w-11/12">
         {/* logo */}
-        <div className="font-bold tracking-wider text-xl">
-          <h1>
-            <span className="bg-primary text-white py-1 px-3 rounded-lg font-bold mr-2">
+        <div className="">
+          <Link href={'/'} className="font-extrabold tracking-wider text-lg text-dark">
+            <span className="bg-primary text-white py-1 px-2.5 rounded-lg font-bold mr-2">
               K
             </span>
             KeyChecks.
             <span className="text-primary">ai</span>
-          </h1>
+          </Link>
         </div>
 
-        <div className="flex items-center justify-between gap-6">
+        <div className="md:flex items-center justify-between gap-6 hidden">
           {/* link */}
           <div>
-            <ul className="flex flex-row gap-6 items-center">
+            <ul className="flex flex-row gap-6 lg:gap-8 items-center">
               {navlinks.map((nav, i) => (
                 <li key={i}>
                   <Link
                     href={nav.href}
-                    className={`hover:text-primary text-sm font-semibold tracking-wider ${
+                    className={`hover:text-primary text-sm font-medium duration-300 tracking-wider ${
                       path === nav.href ? "text-primary" : "text-[#64748B]"
                     }`}
                   >
@@ -63,16 +65,23 @@ const Navbar = () => {
 
           {/* button */}
           <div className="flex items-center gap-4">
-            <button className="bg-primary border border-primary text-white py-2 px-6 rounded-lg text-sm font-semibold tracking-wider">
-              Get My Report
-            </button>{" "}
-            <Link
+            <LinkButton
+              type={"primary"}
+              link={"/pricing"}
+              text={"Get My Report"}
+            />
+            {/* <Link
               href={"/login"}
               className="hover:underline hover:text-primary"
             >
               Log in
-            </Link>
+            </Link> */}
           </div>
+        </div>
+        <div className="md:hidden">
+          <button>
+            <Menu />
+          </button>
         </div>
       </nav>
     </section>
