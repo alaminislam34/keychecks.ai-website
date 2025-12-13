@@ -1,4 +1,5 @@
 import { Check, MoveRight, X } from "lucide-react";
+import SectionTitle from "../../ui/SectionTitle/SectionTitle";
 
 export const keys = [
   {
@@ -49,9 +50,7 @@ function WhyKeyChecksExists() {
   return (
     <section className="py-8">
       <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
-        <h1 className="text-dark text-2xl md:text-3xl font-bold py-12">
-          Why KeyChecks Exists
-        </h1>
+        <SectionTitle title={"Why KeyChecks Exists"} color={"text-dark"} />
         <div className="grid text-left grid-cols-1 md:grid-cols-3 pb-20 w-full gap-6">
           {keys.map((key, i) => (
             <div
