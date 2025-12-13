@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="">
           <Link
             href={"/"}
-            className="font-extrabold tracking-wider text-lg text-dark"
+            className="font-semibold tracking-wider text-lg md:text-xl text-dark"
           >
             <span className="bg-primary text-white py-1 px-2.5 rounded-lg font-bold mr-2">
               K
@@ -57,7 +57,7 @@ const Navbar = () => {
                 <li key={i}>
                   <Link
                     href={nav.href}
-                    className={`hover:text-primary text-sm font-medium duration-300 tracking-wider ${
+                    className={`hover:text-primary text-sm font-normal duration-300 tracking-wider ${
                       path === nav.href ? "text-primary" : "text-[#64748B]"
                     }`}
                   >
@@ -74,7 +74,7 @@ const Navbar = () => {
               type={"primary"}
               link={"/pricing"}
               text={"Get My Report"}
-              size={'sm'}
+              size={"sm"}
             />
             {/* <Link
               href={"/login"}
@@ -88,7 +88,11 @@ const Navbar = () => {
           <button onClick={() => setShowMenu(!showMenu)}>
             <Menu />
           </button>
-          <div className={`${showMenu ? "fixed top-14" : "hidden"} fixed bg-white border-b border-b-gray/10 right-0 w-screen p-4`}>
+          <div
+            className={`${
+              showMenu ? "fixed top-14" : "hidden"
+            } fixed bg-white border-b border-b-gray/10 right-0 w-screen p-4`}
+          >
             <div className="flex flex-col gap-4">
               {/* link */}
               <div>
@@ -97,7 +101,7 @@ const Navbar = () => {
                     <li key={i}>
                       <Link
                         href={nav.href}
-                        className={`hover:text-primary text-sm font-medium duration-300 tracking-wider py-2 px-4 hover:bg-primary/10 inline-block w-full rounded-lg ${
+                        className={`hover:text-primary text-sm font-normal duration-300 tracking-wider py-2 px-4 hover:bg-primary/10 inline-block w-full rounded-lg ${
                           path === nav.href
                             ? "text-primary bg-primary/10"
                             : "text-[#64748B]"
