@@ -1,4 +1,11 @@
 "use client";
+
+import Banner from "./components/home/Banner/Banner";
+
 export default function Home() {
-  return <h1>hello world</h1>;
+  return (
+    <>
+      <Banner />
+    </>
+  );
 }

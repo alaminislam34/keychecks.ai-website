@@ -33,7 +33,7 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const path = usePathname();
   return (
-    <section className="py-3 bg-white/60 backdrop-blur-lg fixed w-full top-0 border-b border-gray/10">
+    <section className="py-3.5 bg-white/60 backdrop-blur-lg fixed w-full top-0 border-b border-gray/10">
       <nav className="flex justify-between items-center max-w-310 mx-auto w-[95%] lg:w-11/12">
         {/* logo */}
         <div className="">
@@ -74,6 +74,7 @@ const Navbar = () => {
               type={"primary"}
               link={"/pricing"}
               text={"Get My Report"}
+              size={'sm'}
             />
             {/* <Link
               href={"/login"}
