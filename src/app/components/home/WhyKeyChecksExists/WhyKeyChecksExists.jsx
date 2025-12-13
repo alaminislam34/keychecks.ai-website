@@ -50,7 +50,9 @@ function WhyKeyChecksExists() {
   return (
     <section className="py-8">
       <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
-        <SectionTitle title={"Why KeyChecks Exists"} color={"text-dark"} />
+        <div className="py-12">
+          <SectionTitle title={"Why KeyChecks Exists"} color={"text-dark"} />
+        </div>
         <div className="grid text-left grid-cols-1 md:grid-cols-3 pb-20 w-full gap-6">
           {keys.map((key, i) => (
             <div
