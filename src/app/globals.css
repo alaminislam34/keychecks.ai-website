@@ -1,9 +1,25 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
 
 @theme {
   --color-primary: #5E23BC;
+  --color-gray: #99a1af;
   --color-success: #14532D;
   --color-error: red;
+  --font-poppins: 'Poppins', sans-serif;
 }
-
