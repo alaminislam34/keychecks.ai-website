@@ -47,16 +47,16 @@ export const keys = [
 
 function WhyKeyChecksExists() {
   return (
-    <section>
-      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center py-8">
+    <section className="py-8">
+      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
         <h1 className="text-dark text-2xl md:text-3xl font-bold py-12">
           Why KeyChecks Exists
         </h1>
-        <div className="grid text-left grid-cols-1 md:grid-cols-3 pb-20 gap-6">
+        <div className="grid text-left grid-cols-1 md:grid-cols-3 pb-20 w-full gap-6">
           {keys.map((key, i) => (
             <div
               key={i}
-              className={`${key.bg} p-5 md:p-6 rounded-xl space-y-6`}
+              className={`${key.bg} p-5 md:p-6 rounded-xl space-y-6 w-full`}
             >
               <h1
                 className={`${key.titleColor} tracking-wider text-xl md:text-2xl font-bold`}
