@@ -13,32 +13,32 @@ export const features = [
   {
     title: "Price & Market Insight",
     des: "Recent sold prices, £/sqft, and a fair value band.",
-    icon: <TrendingUp size={24} />,
+    icon: <TrendingUp size={26} />,
   },
   {
     title: "Flood & Environmental",
     des: "Clear, simple explanations of flood zones and local constraints.",
-    icon: <Shield size={24} />,
+    icon: <Shield size={26} />,
   },
   {
     title: "EPC & Energy",
     des: "Understanding the EPC rating, running costs and possible improvements.",
-    icon: <Zap size={24} />,
+    icon: <Zap size={26} />,
   },
   {
     title: "Schools & Safety",
     des: "Local school ratings, area safety and neighbourhood feel.",
-    icon: <CircleCheckBig size={24} />,
+    icon: <CircleCheckBig size={26} />,
   },
   {
     title: "Broadband & Connectivity",
     des: "FTTP availability, speeds, coverage and commute options.",
-    icon: <Clock4 size={24} />,
+    icon: <Clock4 size={26} />,
   },
   {
     title: "Offer Strategy & Solicitor Questions",
     des: "Expert guidance on what to ask the agent, how to negotiate, and what your solicitor should check later.",
-    icon: <FileText size={24} />,
+    icon: <FileText size={26} />,
   },
 ];
 
@@ -55,7 +55,7 @@ function Features() {
               className="flex flex-col gap-4 text-left p-6 rounded-2xl bg-primary/2 border border-primary/10 hover:shadow-xl"
             >
               <div className="flex items-center">
-                <span className="p-4 rounded-xl text-white bg-primary flex items-center justify-center">
+                <span className="p-3 rounded-xl text-white bg-linear-to-b from-primary to-primary/80 flex items-center justify-center">
                   {f.icon}
                 </span>
               </div>
