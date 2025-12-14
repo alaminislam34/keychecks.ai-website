@@ -17,7 +17,7 @@ function Offer() {
         </div>
         <div>
           <Link
-            href="#"
+            href={"/pricing"}
             className="bg-linear-to-r from-primary to-primary/90 inline-block z-10 text-white py-4 px-8 text-lg md:text-xl rounded-xl font-semibold tracking-wider"
           >
             Get My Report

@@ -29,16 +29,16 @@ export default function Footer() {
             <h3 className="font-semibold">Product</h3>
             <ul className="text-[#9ca3af] space-y-2 text-sm">
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>SmartReport</Link>
+                <Link href={"#pricing"}>SmartReport</Link>
               </li>
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>Investor Pack</Link>
+                <Link href={"#pricing"}>Investor Pack</Link>
               </li>
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>Bundle Credits</Link>
+                <Link href={"#pricing"}>Bundle Credits</Link>
               </li>
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>Guarantee</Link>
+                <Link href={"/ourpromise"}>Guarantee</Link>
               </li>
             </ul>
           </div>
@@ -46,16 +46,16 @@ export default function Footer() {
             <h3 className="font-semibold">Company</h3>
             <ul className="text-[#9ca3af] space-y-2 text-sm">
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>About</Link>
+                <Link href={"/about"}>About</Link>
               </li>
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>Partnerships</Link>
+                <Link href={"/partnerships"}>Partnerships</Link>
               </li>
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>Blog</Link>
+                <Link href={"/blog"}>Blog</Link>
               </li>
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>Contact</Link>
+                <Link href={"/contact"}>Contact</Link>
               </li>
             </ul>
           </div>
@@ -63,13 +63,13 @@ export default function Footer() {
             <h3 className="font-semibold">Legal</h3>
             <ul className="text-[#9ca3af] space-y-2 text-sm">
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>Privacy</Link>
+                <Link href={"/privacy"}>Privacy</Link>
               </li>
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>Terms</Link>
+                <Link href={"/privacy"}>Terms</Link>
               </li>
               <li className="hover:text-[#a87cee]">
-                <Link href={"#"}>Data Sources</Link>
+                <Link href={"/privacy"}>Data Sources</Link>
               </li>
             </ul>
           </div>

@@ -1,14 +1,13 @@
-import React from "react";
-import SectionTitle from "../../ui/SectionTitle/SectionTitle";
-import { Check } from "lucide-react";
-import LinkButton from "../../ui/link/LinkButton";
-import Link from "next/link";
+"use client";
 
-export const pricing = [];
+import { Check } from "lucide-react";
+import React from "react";
+import SectionTitle from "../components/ui/SectionTitle/SectionTitle";
+import Link from "next/link";
 
 function Pricing() {
   return (
-    <section id="pricing" className="py-20 bg-primary/2">
+    <section className="py-20 bg-primary/2">
       <div className="max-w-310 mx-auto w-[95%] lg:w-11/12">
         <div className="text-center pb-12">
           <SectionTitle title={"Pricing"} color={"text-dark"} />
