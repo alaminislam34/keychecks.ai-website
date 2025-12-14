@@ -91,7 +91,7 @@ const Navbar = () => {
           <div
             className={`${
               showMenu ? "fixed top-14" : "hidden"
-            } fixed bg-white border-b border-b-gray/10 right-0 w-screen p-4`}
+            } fixed bg-white border-b border-b-gray/10 right-0 w-screen p-6`}
           >
             <div className="flex flex-col gap-4">
               {/* link */}
@@ -120,6 +120,7 @@ const Navbar = () => {
                   type={"primary"}
                   link={"/pricing"}
                   text={"Get My Report"}
+                  size={'sm'}
                 />
                 {/* <Link
               href={"/login"}
