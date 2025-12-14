@@ -2,14 +2,14 @@
 
 import React from "react";
 
-function Partnerships() {
+function Blog() {
   return (
     <section>
       <div className="min-h-[80vh] max-w-360 mx-auto w-[95%] lg:w-11/12 py-24">
-        <h1>PartnerShips page</h1>
+        <h1>Blog page</h1>
       </div>
     </section>
   );
 }
 
-export default Partnerships;
+export default Blog;
