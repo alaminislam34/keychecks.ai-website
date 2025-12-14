@@ -8,7 +8,7 @@ import Link from "next/link";
 function Pricing() {
   return (
     <section className="py-20 bg-primary/2">
-      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12">
+      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12">
         <div className="text-center pb-12">
           <SectionTitle title={"Pricing"} color={"text-dark"} />
           <p className="md:text-lg text-gray-600">

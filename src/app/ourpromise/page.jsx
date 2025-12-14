@@ -48,7 +48,7 @@ export const features = [
 function OurPromise() {
   return (
     <section className="py-8 pb-24">
-      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
+      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
         <div className="pb-6 space-y-4">
           <h1
             className={`text-dark text-3xl md:text-4xl lg:text-5xl font-bold py-6`}

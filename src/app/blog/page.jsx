@@ -44,7 +44,7 @@ export const blogs = [
 function Blog() {
   return (
     <section>
-      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 py-24">
+      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 py-24">
         <div className="pb-6 md:pb-8 space-y-4 md:space-y-6 text-center">
           <h1
             className={`text-dark text-3xl md:text-4xl lg:text-5xl font-bold`}
@@ -87,7 +87,7 @@ function Blog() {
         <br />
         <br />
         <section className="bg-linear-to-br from-dark to-primary py-14 mb-12 rounded-2xl">
-          <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center py-6">
+          <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center py-6">
             <div className="pb-6 md:pb-8 space-y-4 md:space-y-6 text-center">
               <h1 className={`text-white text-3xl md:text-4xl font-bold`}>
                 Want property insights delivered to your inbox?

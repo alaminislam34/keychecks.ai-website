@@ -45,7 +45,7 @@ export const features = [
 function Features() {
   return (
     <section className="py-8 pb-24">
-      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
+      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
         <div className="pb-6">
           <SectionTitle title={"Features"} color={"text-dark"} />
         </div>

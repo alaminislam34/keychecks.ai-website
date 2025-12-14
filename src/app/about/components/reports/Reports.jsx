@@ -33,7 +33,7 @@ export const features = [
 function Reports() {
   return (
     <section className="py-12 pb-24">
-      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
+      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
         <div className="pb-6">
           <SectionTitle title={"Every report is:"} color={"text-dark"} />
         </div>

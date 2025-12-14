@@ -5,7 +5,7 @@ import SectionTitle from "../../ui/SectionTitle/SectionTitle";
 function Offer() {
   return (
     <section className="bg-white py-10 mb-10">
-      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center py-6">
+      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center py-6">
         <div className="pb-6">
           <SectionTitle
             title={"Ready to make a confident offer?"}

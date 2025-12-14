@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <section className="py-20 bg-dark">
-      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 space-y-6 flex flex-col items-center">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-white">
+      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 space-y-6 flex flex-col items-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-white w-full">
           <div className="space-y-4">
             {/* logo */}
             <div className="">

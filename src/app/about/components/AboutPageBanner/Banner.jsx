@@ -3,7 +3,7 @@ import React from "react";
 function Banner() {
   return (
     <section className="bg-primary/5">
-      <div className="max-w-360 mx-auto w-[95%] lg:w-11/12 py-24">
+      <div className="max-w-360 mx-auto w-[92%] lg:w-11/12 py-24">
         <div className="py-12">
           <div className="pb-6 md:pb-8 space-y-4 md:space-y-6 text-center">
             <h1

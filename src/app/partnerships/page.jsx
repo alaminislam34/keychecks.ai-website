@@ -41,7 +41,7 @@ export const partners = [
 function Partnerships() {
   return (
     <section>
-      <div className="min-h-[80vh] max-w-310 mx-auto w-[95%] lg:w-11/12 py-24">
+      <div className="min-h-[80vh] max-w-310 mx-auto w-[92%] lg:w-11/12 py-24">
         <div className="pb-6 md:pb-8 space-y-4 md:space-y-6 text-center">
           <h1
             className={`text-dark text-3xl md:text-4xl lg:text-5xl font-bold`}

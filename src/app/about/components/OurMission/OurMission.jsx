@@ -3,7 +3,7 @@ import SectionTitle from "@/app/components/ui/SectionTitle/SectionTitle";
 function OurMission() {
   return (
     <section className="bg-linear-to-br from-dark to-primary py-14">
-      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center py-6">
+      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center py-6">
         <div>
           <h1 className={`text-white text-3xl md:text-4xl font-semibold`}>
             Our Mission

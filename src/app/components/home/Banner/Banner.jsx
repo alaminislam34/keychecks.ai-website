@@ -4,7 +4,7 @@ import LinkButton from "../../ui/link/LinkButton";
 function Banner() {
   return (
     <section className="py-20 bg-primary/2 min-h-[80vh] flex items-center justify-center">
-      <div className="max-w-310 mx-auto w-[95%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
+      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
         <h1 className="text-4xl sm:text-5xl tracking-wider leading-[1.4] md:leading-none text-dark md:text-6xl font-semibold lg:max-w-3/4">
           Know exactly what you're buying — without waiting, guessing or reading
           legal jargon.
