@@ -18,7 +18,7 @@ function Pricing() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white space-y-6 p-6 flex my-4 justify-between flex-col rounded-2xl border-2 shadow-md shadow-primary/10 duration-300 border-primary/10 hover:border-primary">
+          <div className="bg-white space-y-6 p-6 md:p-8 flex my-4 justify-between flex-col rounded-2xl border-2 shadow-lg shadow-primary/10 duration-300 border-primary/10 hover:border-primary">
             <div className="space-y-2 text-center">
               <h3 className="text-xl lg:text-2xl font-semibold text-dark">
                 SmartReport
@@ -72,8 +72,8 @@ function Pricing() {
             </div>
           </div>
           {/* popular */}
-          <div className="bg-primary space-y-6 flex justify-between flex-col p-6 relative rounded-2xl border-2 shadow-md shadow-primary/10 duration-300 border-primary/10 hover:border-primary text-white">
-            <div className="absolute -top-4 left-1/2  -translate-x-1/2 rounded-xl bg-primary/20 font-semibold font-inter backdrop-blur-3xl py-1 px-4">
+          <div className="bg-linear-to-br from-primary to-[#7A39EA] space-y-6 flex justify-between flex-col p-6 md:p-8 relative rounded-2xl border-2 shadow-lg shadow-primary/10 duration-300 border-primary/10 text-white">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-[#A78BFA] font-semibold font-inter backdrop-blur-3xl py-1 px-4 text-sm tracking-wider">
               Most Popular
             </div>
             <div className="space-y-2 text-center">
@@ -128,7 +128,7 @@ function Pricing() {
               </Link>
             </div>
           </div>
-          <div className="bg-white space-y-6 p-6 flex my-4 justify-between flex-col rounded-2xl border-2 shadow-md shadow-primary/10 duration-300 border-primary/10 hover:border-primary">
+          <div className="bg-white space-y-6 p-6 md:p-8 flex my-4 justify-between flex-col rounded-2xl border-2 shadow-lg shadow-primary/10 duration-300 border-primary/10 hover:border-primary">
             <div className="space-y-2 text-center">
               <h3 className="text-xl lg:text-2xl font-semibold text-dark">
                 5-Report Bundle
