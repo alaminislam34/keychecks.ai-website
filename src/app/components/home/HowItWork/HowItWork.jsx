@@ -15,11 +15,11 @@ function HowItWork() {
           <SectionTitle title={"How It Works"} color={"text-white"} />
         </div>
         <div>
-          <ul className="flex flex-col md:flex-row items-start justify-center gap-6">
+          <ul className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
             {workFlow.map((w, i) => (
               <li
                 key={i}
-                className="flex flex-1 flex-col items-center gap-4 text-center"
+                className="flex flex-1 border w-full flex-col items-center gap-2 text-center"
               >
                 <div className="w-20 h-20 flex items-center justify-center text-3xl rounded-full font-bold bg-linear-to-tl from-[#742ee6] to-[#b38af5] text-white">
                   {i + 1}
