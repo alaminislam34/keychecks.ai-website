@@ -4,13 +4,14 @@ import { Check } from "lucide-react";
 import React from "react";
 import SectionTitle from "../components/ui/SectionTitle/SectionTitle";
 import Link from "next/link";
+import PageTitle from "../components/PageTitle/PageTitle";
 
 function Pricing() {
   return (
     <section className="py-20 bg-primary/2">
       <div className="max-w-310 mx-auto w-[92%] lg:w-11/12">
         <div className="text-center pb-12">
-          <SectionTitle title={"Pricing"} color={"text-dark"} />
+          <PageTitle title={"Pricing"} subTitle={""} />
           <p className="md:text-lg text-gray-600">
             Handcrafted, human-reviewed, written in plain English.
           </p>

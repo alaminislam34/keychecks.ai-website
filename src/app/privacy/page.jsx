@@ -3,21 +3,16 @@
 import { FileCheck, Lock, Shield } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import PageTitle from "../components/PageTitle/PageTitle";
 
 function Privacy() {
   return (
     <section>
       <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 py-24">
-        <div className="pb-6 space-y-4 text-center">
-          <h1
-            className={`text-dark text-3xl md:text-4xl lg:text-5xl font-bold`}
-          >
-            Legal Information
-          </h1>
-          <p className="text-gray text-xl md:text-2xl">
-            Privacy, terms, and data transparency.
-          </p>
-        </div>
+        <PageTitle
+          title={"Legal Information"}
+          subTitle={"Privacy, terms, and data transparency."}
+        />
         <div className="space-y-6 md:space-y-8">
           <div className="flex flex-col gap-4 text-left p-8 md:p-12 rounded-2xl border-2 border-primary/5  group shadow-lg ">
             <div className="flex items-start gap-4">
