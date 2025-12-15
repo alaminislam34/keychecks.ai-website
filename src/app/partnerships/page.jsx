@@ -41,18 +41,18 @@ export const partners = [
 
 function Partnerships() {
   return (
-    <section>
-      <div className="min-h-[80vh] max-w-310 mx-auto w-[92%] lg:w-11/12 py-24">
+    <section className="bg-linear-to-r from-[#FCF8FF] to-[#FDFAFF]">
+      <div className="min-h-[80vh] max-w-310 mx-auto w-[92%] lg:w-11/12 py-20">
         <PageTitle
           title={"Partner With KeyChecks"}
           subTitle={"Trusted by estate agents, brokers and investors."}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {partners.map((p, i) => (
             <div
               key={i}
-              className="flex flex-col gap-4 text-left p-6 rounded-2xl bg-primary/2 border border-primary/10 hover:shadow-xl duration-300"
+              className="flex flex-col gap-4 text-left p-6 md:p-8 rounded-2xl bg-white border border-primary/10 hover:border-primary shadow-xl duration-300"
             >
               <div className="flex items-center">
                 <span className="p-4 rounded-xl text-white bg-linear-to-b from-primary to-primary/80 flex items-center justify-center">
@@ -79,19 +79,19 @@ function Partnerships() {
             </div>
           ))}
         </div>
-        <section className="bg-linear-to-br from-dark to-primary max-w-3xl mx-auto my-12 py-8 px-14 rounded-2xl">
+        <section className="bg-linear-to-br from-dark to-primary max-w-3xl mx-auto  py-8 px-14 rounded-2xl">
           <div className="text-center space-y-6 flex flex-col items-center py-6">
-            <div className="pb-6 md:pb-8 space-y-4 md:space-y-6 text-center">
-              <h1 className={`text-white text-3xl md:text-4xl font-bold`}>
+            <div className="mb-6 space-y-4 text-center">
+              <h1 className={`text-white text-2xl md:text-3xl font-semibold`}>
                 Interested in partnering?
               </h1>
-              <p className="text-white text-xl md:text-2xl">
+              <p className="text-white text-lg md:text-xl font-normal">
                 Get in touch to discuss white-label options, bulk pricing, and
                 custom integrations.
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <button className="py-3 px-6 bg-white text-primary hover:scale-105 duration-300 rounded-xl font-semibold">
+              <button className="py-3 md:py-4 md:px-8 px-6 bg-white text-primary hover:scale-105 duration-300 rounded-xl md:text-lg font-semibold">
                 Contact: partners@keychecks.ai
               </button>
             </div>
