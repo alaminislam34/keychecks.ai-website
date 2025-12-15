@@ -1,7 +1,6 @@
 import React from "react";
 import SectionTitle from "../../ui/SectionTitle/SectionTitle";
 import { Check } from "lucide-react";
-import LinkButton from "../../ui/link/LinkButton";
 import Link from "next/link";
 
 export const pricing = [];
@@ -12,7 +11,7 @@ function Pricing() {
       <div className="max-w-310 mx-auto w-[92%] lg:w-11/12">
         <div className="text-center pb-12">
           <SectionTitle title={"Pricing"} color={"text-dark"} />
-          <p className="md:text-lg text-gray-600">
+          <p className="text-lg md:text-xl text-gray">
             Handcrafted, human-reviewed, written in plain English.
           </p>
         </div>
