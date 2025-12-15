@@ -6,27 +6,27 @@ export const features = [
   {
     title: "Handcrafted",
     des: "Every report is carefully prepared by a human expert.",
-    icon: <FileCheck size={26} />,
+    icon: <FileCheck size={27} />,
   },
   {
     title: "Expert-reviewed",
     des: "Reviewed by property professionals who understand the market.",
-    icon: <Award size={26} />,
+    icon: <Award size={27} />,
   },
   {
     title: "Written in simple English",
     des: "No jargon, no confusion — just clear, actionable insights.",
-    icon: <Sparkles size={26} />,
+    icon: <Sparkles size={27} />,
   },
   {
     title: "Based on official UK data",
     des: "Using trusted sources like Land Registry, EPC, and local authorities.",
-    icon: <Shield size={26} />,
+    icon: <Shield size={27} />,
   },
   {
     title: "Delivered the same day",
     des: "Get your report today, not in 3-5 business days.",
-    icon: <Clock4 size={26} />,
+    icon: <Clock4 size={27} />,
   },
 ];
 
@@ -45,7 +45,7 @@ function Reports() {
               className="flex flex-col items-center gap-4 text-left px-6 py-9 rounded-2xl bg-primary/2 border border-primary/10 hover:shadow-xl duration-300"
             >
               <div className="flex items-center">
-                <span className="p-3 rounded-xl text-white bg-linear-to-b from-primary to-primary/80 flex items-center justify-center">
+                <span className="p-4 rounded-xl text-white bg-linear-to-b from-primary to-primary/80 flex items-center justify-center">
                   {f.icon}
                 </span>
               </div>

@@ -52,12 +52,12 @@ function Blog() {
         />
         <br />
         <br />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {blogs.map((b, i) => {
             return (
               <div
                 key={i}
-                className="flex flex-col gap-4 text-left p-8 md:p-12 rounded-2xl border-2 border-primary/5 hover:border-primary group shadow-lg "
+                className="flex flex-col gap-4 text-left p-8 rounded-2xl border border-primary/5 hover:border-primary group shadow-lg"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex items-center">
@@ -66,15 +66,17 @@ function Blog() {
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-dark group-hover:text-primary text-xl md:text-2xl font-bold duration-300">
+                    <h3 className="text-dark group-hover:text-primary text-xl md:text-2xl font-semibold duration-300">
                       {b.title}
                     </h3>
-                    <p className="text-primary py-1 px-2 rounded-2xl text-sm">
-                      {b.readTime}
+                    <p className="text-primary text-xs py-2">
+                      <span className="bg-primary/5 py-1.5 px-3 rounded-2xl">
+                        {b.readTime}
+                      </span>
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-400 text-sm md:text-base">{b.des}</p>
+                <p className="text-gray text-sm md:text-base">{b.des}</p>
               </div>
             );
           })}
@@ -82,12 +84,12 @@ function Blog() {
         <br />
         <br />
         <section className="bg-linear-to-br from-dark to-primary py-14 mb-12 rounded-2xl">
-          <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center py-6">
-            <div className="pb-6 md:pb-8 space-y-4 md:space-y-6 text-center">
-              <h1 className={`text-white text-3xl md:text-4xl font-bold`}>
+          <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
+            <div className="space-y-4 md:space-y-6 text-center">
+              <h1 className={`text-white text-2xl md:text-3xl font-semibold`}>
                 Want property insights delivered to your inbox?
               </h1>
-              <p className="text-white text-xl md:text-2xl">
+              <p className="text-white md:text-lg">
                 Subscribe to our newsletter for tips, guides, and updates.
               </p>
             </div>

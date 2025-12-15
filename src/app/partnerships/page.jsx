@@ -55,7 +55,7 @@ function Partnerships() {
               className="flex flex-col gap-4 text-left p-6 md:p-8 rounded-2xl bg-white border border-primary/10 hover:border-primary shadow-xl duration-300"
             >
               <div className="flex items-center">
-                <span className="p-4 rounded-xl text-white bg-linear-to-b from-primary to-primary/80 flex items-center justify-center">
+                <span className="p-4 md:p-6 rounded-xl text-white bg-linear-to-b from-primary to-primary/80 flex items-center justify-center">
                   {p.icon}
                 </span>
               </div>
