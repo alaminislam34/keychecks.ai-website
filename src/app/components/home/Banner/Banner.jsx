@@ -3,13 +3,13 @@ import LinkButton from "../../ui/link/LinkButton";
 
 function Banner() {
   return (
-    <section className="bg-primary/2 h-full min-h-[85vh] sm:min-h-[75vh] flex items-center justify-center">
-      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
-        <h1 className="text-4xl sm:text-5xl tracking-wider leading-none text-dark md:text-6xl font-semibold lg:max-w-10/12 lg:leading-[1.2]">
+    <section className="bg-primary/2 h-full min-h-[85vh] sm:min-h-[78vh] flex items-center justify-center">
+      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 lg:space-y-8 flex flex-col items-center">
+        <h1 className="text-4xl sm:text-5xl text-dark md:text-6xl font-semibold lg:max-w-9/12">
           Know exactly what you're buying — without waiting, guessing or reading
           legal jargon.
         </h1>
-        <p className="text-gray-500 md:text-lg lg:text-xl lg:max-w-5/6">
+        <p className="text-gray-500 text-lg md:text-xl font-normal lg:max-w-7/10">
           Price, EPC, flood, crime, broadband, schools and offer strategy — all
           clearly explained in one same-day, expert-reviewed report.
         </p>

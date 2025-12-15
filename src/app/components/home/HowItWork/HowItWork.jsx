@@ -19,9 +19,9 @@ function HowItWork() {
             {workFlow.map((w, i) => (
               <li
                 key={i}
-                className="flex flex-1 border w-full flex-col items-center gap-2 text-center"
+                className="flex flex-1 w-full flex-col items-center gap-2 text-center"
               >
-                <div className="w-20 h-20 flex items-center justify-center text-3xl rounded-full font-bold bg-linear-to-tl from-[#742ee6] to-[#b38af5] text-white">
+                <div className="w-16 h-16 flex items-center justify-center text-3xl rounded-full font-bold bg-linear-to-tl from-[#742ee6] to-[#b38af5] text-white">
                   {i + 1}
                 </div>
                 <p className="text-white">{w}</p>
