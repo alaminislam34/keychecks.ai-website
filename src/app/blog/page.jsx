@@ -8,6 +8,7 @@ import {
   TrendingUp,
   Wifi,
 } from "lucide-react";
+import PageTitle from "../components/PageTitle/PageTitle";
 export const blogs = [
   {
     icon: <TrendingUp size={24} />,
@@ -45,16 +46,10 @@ function Blog() {
   return (
     <section>
       <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 py-24">
-        <div className="pb-6 md:pb-8 space-y-4 md:space-y-6 text-center">
-          <h1
-            className={`text-dark text-3xl md:text-4xl lg:text-5xl font-bold`}
-          >
-            About KeyChecks.ai
-          </h1>
-          <p className="text-gray text-xl md:text-2xl">
-            Expert-led property insight for real people.
-          </p>
-        </div>
+        <PageTitle
+          title={"About KeyChecks.ai"}
+          subTitle={"Expert-led property insight for real people."}
+        />
         <br />
         <br />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -11,10 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <header>
+        <header className="h-15 md:h-16.5">
           <Navbar />
         </header>
-        <main className="md:mt-16">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

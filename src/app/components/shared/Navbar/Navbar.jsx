@@ -120,14 +120,8 @@ const Navbar = () => {
                   type={"primary"}
                   link={"/pricing"}
                   text={"Get My Report"}
-                  size={'sm'}
+                  size={"sm"}
                 />
-                {/* <Link
-              href={"/login"}
-              className="hover:underline hover:text-primary"
-            >
-              Log in
-            </Link> */}
               </div>
             </div>
           </div>

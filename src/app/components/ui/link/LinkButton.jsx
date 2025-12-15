@@ -10,11 +10,11 @@ export default function LinkButton({ text, link, type, size }) {
           : " text-primary border-2 border-primary bg-white hover:bg-primary/5"
       } ${
         size === "sm"
-          ? " py-2.5 px-6 text-sm"
+          ? " py-2 px-6 text-sm"
           : size === "lg"
           ? "py-4 px-8 text-lg"
           : size === "xl" && "py-3 px-10 text-lg"
-      } rounded-xl  font-semibold tracking-wider`}
+      } rounded-xl  font-medium`}
     >
       {text}
     </Link>

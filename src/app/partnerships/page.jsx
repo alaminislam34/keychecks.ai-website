@@ -1,6 +1,7 @@
 "use client";
 
 import { Building2, Check } from "lucide-react";
+import PageTitle from "../components/PageTitle/PageTitle";
 
 export const partners = [
   {
@@ -42,16 +43,10 @@ function Partnerships() {
   return (
     <section>
       <div className="min-h-[80vh] max-w-310 mx-auto w-[92%] lg:w-11/12 py-24">
-        <div className="pb-6 md:pb-8 space-y-4 md:space-y-6 text-center">
-          <h1
-            className={`text-dark text-3xl md:text-4xl lg:text-5xl font-bold`}
-          >
-            Partner With KeyChecks
-          </h1>
-          <p className="text-gray text-xl md:text-2xl">
-            Trusted by estate agents, brokers and investors.
-          </p>
-        </div>
+        <PageTitle
+          title={"Partner With KeyChecks"}
+          subTitle={"Trusted by estate agents, brokers and investors."}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {partners.map((p, i) => (

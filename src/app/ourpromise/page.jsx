@@ -11,6 +11,7 @@ import {
   Zap,
 } from "lucide-react";
 import SectionTitle from "../components/ui/SectionTitle/SectionTitle";
+import PageTitle from "../components/PageTitle/PageTitle";
 
 export const features = [
   {
@@ -49,16 +50,10 @@ function OurPromise() {
   return (
     <section className="py-8 pb-24">
       <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
-        <div className="pb-6 space-y-4">
-          <h1
-            className={`text-dark text-3xl md:text-4xl lg:text-5xl font-bold py-6`}
-          >
-            Our Promise
-          </h1>
-          <p className="text-primary text-xl md:text-2xl">
-            Clear. Honest. Same-day.
-          </p>
-        </div>
+        <PageTitle
+          title={"Our Promise"}
+          subTitle={"Clear, Honest. Same-day."}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((f, i) => (
