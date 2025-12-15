@@ -54,17 +54,17 @@ function Features() {
           {features.map((f, i) => (
             <div
               key={i}
-              className="flex flex-col gap-4 text-left p-6 rounded-2xl bg-primary/2 border border-primary/10 hover:shadow-xl duration-300"
+              className="flex flex-col gap-4 text-left p-6 rounded-2xl bg-linear-to-br from-white to-[#FAF6FF] border border-[#f3ebff] hover:shadow-lg duration-300"
             >
               <div className="flex items-center">
                 <span className="p-3 rounded-xl text-white bg-linear-to-b from-primary to-primary/80 flex items-center justify-center">
                   {f.icon}
                 </span>
               </div>
-              <h3 className="text-dark text-lg md:text-xl font-bold">
+              <h3 className="text-dark text-lg md:text-xl font-semibold">
                 {f.title}
               </h3>
-              <p className="text-gray-400 text-sm sm:text-base md:text-lg">
+              <p className="text-gray text-sm md:text-base">
                 {f.des}
               </p>
             </div>
