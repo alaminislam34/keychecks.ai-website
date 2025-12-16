@@ -54,7 +54,7 @@ const LocalCrimeSafety = () => {
   ];
 
   return (
-    <div className=" p-4 md:p-8 bg-red-50/50 rounded-xl shadow-lg border border-red-100">
+    <div className="p-4 md:p-8 bg-red-50/50 rounded-xl shadow-lg border border-red-100">
       {/* --- Header Section --- */}
       <div className="flex items-start mb-4">
         {/* Lucide Shield Icon */}

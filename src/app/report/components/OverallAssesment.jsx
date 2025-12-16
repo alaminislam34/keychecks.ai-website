@@ -2,7 +2,7 @@ import { CircleCheckBig } from "lucide-react";
 
 const OverallAssessment = () => {
   return (
-    <div className="p-6 rounded-2xl bg-green-50/60 border border-green-300 flex flex-row gap-4">
+    <div className="p-4 md:p-8 rounded-2xl bg-green-50/60 border border-green-300 flex flex-row gap-4">
       {/* Header Section */}
       <div className="flex items-start mb-4">
         <div className="flex items-center justify-center p-3.5 min-w-10 rounded-2xl bg-green-500 mr-4">

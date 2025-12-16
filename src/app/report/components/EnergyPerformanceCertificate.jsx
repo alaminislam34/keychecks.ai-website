@@ -23,7 +23,7 @@ const RiskBadge = ({ level }) => (
 
 const EnergyPerformanceCertificate = () => {
   return (
-    <div className="p-6 bg-white border border-gray-200 rounded-xl shadow-lg">
+    <div className="p-4 md:p-8 bg-white border border-gray-200 rounded-xl shadow-lg">
       {/* Header Section */}
       <div className="flex items-start mb-6">
         {/* Icon Container (Yellow Background) */}

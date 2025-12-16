@@ -41,7 +41,7 @@ const RiskItem = ({ title, description, riskLevel }) => (
 
 const FloodRiskAssessment = () => {
   return (
-    <div className="p-8 bg-blue-50 border border-gray-200 rounded-2xl">
+    <div className="p-4 md:p-8 bg-blue-50 border border-gray-200 rounded-2xl">
       {/* Header Section */}
       <div className="flex items-start mb-6">
         <div className="flex items-center justify-center p-3 bg-blue-500 rounded-xl mr-4">
