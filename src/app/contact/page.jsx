@@ -12,7 +12,7 @@ function Contact() {
           title={"Contact Us"}
           subTitle={"We respond within 24 hours."}
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="flex flex-col gap-4 items-center justify-center text-left p-6 rounded-2xl bg-white border border-primary/10 shadow-lg hover:shadow-xl duration-300">
             <div className="flex items-center">
               <span className="p-4 rounded-xl text-white bg-linear-to-b from-primary to-primary/80 flex items-center justify-center">
