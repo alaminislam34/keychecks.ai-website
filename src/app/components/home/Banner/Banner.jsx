@@ -16,7 +16,7 @@ function Banner() {
         <div className="flex flex-wrap gap-4 items-center justify-center">
           <LinkButton
             type={"primary"}
-            link={"/pricing"}
+            link={"/add-legal-insight"}
             text={"Get My Report"}
             size={"lg"}
           />

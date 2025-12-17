@@ -72,16 +72,10 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <LinkButton
               type={"primary"}
-              link={"/pricing"}
+              link={"/add-legal-insight"}
               text={"Get My Report"}
               size={"sm"}
             />
-            {/* <Link
-              href={"/login"}
-              className="hover:underline hover:text-primary"
-            >
-              Log in
-            </Link> */}
           </div>
         </div>
         <div className="md:hidden relative">
@@ -118,7 +112,7 @@ const Navbar = () => {
               <div className="flex items-center gap-4">
                 <LinkButton
                   type={"primary"}
-                  link={"/pricing"}
+                  link={"/add-legal-insight"}
                   text={"Get My Report"}
                   size={"sm"}
                 />
