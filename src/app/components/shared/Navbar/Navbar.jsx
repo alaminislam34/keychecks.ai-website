@@ -27,6 +27,10 @@ export const navlinks = [
     href: "/contact",
     name: "Contact",
   },
+  {
+    href: "/dashboard",
+    name: "Dashboard",
+  },
 ];
 
 const Navbar = () => {
@@ -72,7 +76,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <LinkButton
               type={"primary"}
-              link={"/add-legal-insight"}
+              link={"/auth"}
               text={"Get My Report"}
               size={"sm"}
             />
