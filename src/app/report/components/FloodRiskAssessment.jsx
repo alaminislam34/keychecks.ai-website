@@ -6,15 +6,15 @@ const RiskBadge = ({ level }) => {
   let textColor = "text-green-700";
   let text = level;
 
-  if (level === "No Risk") {
+  if (level === "No Risk" || level === "Very Low") {
     bgColor = "bg-green-100";
     textColor = "text-green-700";
-  } else if (level === "Unlikely") {
-    bgColor = "bg-green-100"; // Using green for "Unlikely" to match the image
-    textColor = "text-green-700";
-  } else if (level === "Very Low") {
-    bgColor = "bg-green-100";
-    textColor = "text-green-700";
+  } else if (level === "Unlikely" || level === "Moderate") {
+    bgColor = "bg-amber-100";
+    textColor = "text-amber-700";
+  } else if (level === "High" || level === "Severe") {
+    bgColor = "bg-red-100";
+    textColor = "text-red-700";
   }
 
   return (
@@ -55,6 +55,18 @@ const FloodRiskAssessment = () => {
             Comprehensive analysis of flooding risks from all sources
           </p>
         </div>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-6">
+        <span className="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-700">
+          Green: Low Risk
+        </span>
+        <span className="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-700">
+          Amber: Medium Risk
+        </span>
+        <span className="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-700">
+          Red: High Risk
+        </span>
       </div>
 
       {/* Risk Items List */}

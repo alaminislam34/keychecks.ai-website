@@ -45,9 +45,9 @@ export const blogs = [
 function Blog() {
   return (
     <section>
-      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 py-24">
+      <div className="max-w-360 mx-auto w-[92%] lg:w-11/12 py-24">
         <PageTitle
-          title={"About KeyChecks.ai"}
+          title={"About KeyChecks"}
           subTitle={"Expert-led property insight for real people."}
         />
         <br />
@@ -84,7 +84,7 @@ function Blog() {
         <br />
         <br />
         <section className="bg-linear-to-br from-dark to-primary py-14 mb-12 rounded-2xl">
-          <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
+          <div className="max-w-360 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
             <div className="space-y-4 md:space-y-6 text-center">
               <h1 className={`text-white text-2xl md:text-3xl font-semibold`}>
                 Want property insights delivered to your inbox?

@@ -7,7 +7,7 @@ function Banner() {
       <div className="max-w-360 mx-auto w-[92%] lg:w-11/12 py-20">
         <div>
           <PageTitle
-            title={"About KeyChecks.ai"}
+            title={"About KeyChecks"}
             subTitle={"Expert-led property insight for real people."}
           />
           <div>

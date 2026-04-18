@@ -99,21 +99,23 @@ const BroadbandConnectivity = () => {
       </div>
 
       {/* --- Main Information Table --- */}
-      <div className="border border-gray-200 rounded-lg overflow-hidden mb-6">
-        {broadbandData.tableRows.map((row, index) => (
-          <div
-            key={index}
-            // Responsive grid for table rows: 2 columns on small screens, 3 on larger ones
-            className={`grid grid-cols-1 sm:grid-cols-3 border-b last:border-b-0 border-gray-200`}
-          >
-            <div className="col-span-1 p-4 font-medium bg-gray-50 text-gray-700">
-              {row.title}
+      <div className="max-[389px]:overflow-x-auto">
+        <div className="border border-gray-200 rounded-lg overflow-hidden mb-6 min-w-97.75">
+          {broadbandData.tableRows.map((row, index) => (
+            <div
+              key={index}
+              // Responsive grid for table rows: 2 columns on small screens, 3 on larger ones
+              className={`grid grid-cols-1 sm:grid-cols-3 border-b last:border-b-0 border-gray-200`}
+            >
+              <div className="col-span-1 p-4 font-medium bg-gray-50 text-gray-700">
+                {row.title}
+              </div>
+              <div className="col-span-2 p-4 text-gray-600 border-t sm:border-t-0 sm:border-l border-gray-200">
+                {row.content}
+              </div>
             </div>
-            <div className="col-span-2 p-4 text-gray-600 border-t sm:border-t-0 sm:border-l border-gray-200">
-              {row.content}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* --- Expert Insight (Info Box) --- */}

@@ -107,28 +107,30 @@ const PropertyValueAnalysis = () => {
       </div>
 
       {/* --- Value/Estimate Table --- */}
-      <div className="mb-8 overflow-hidden border border-gray-200 rounded-xl">
-        <div className="grid grid-cols-3 border-b border-gray-100 bg-white text-gray-600 font-medium text-sm py-4 px-4 rounded-t-lg">
-          <div className="">Source</div>
-          <div className="">Value/Estimate</div>
-          <div className=" text-right">Notes</div>
-        </div>
+      <div className="mb-8 max-[389px]:overflow-x-auto">
+        <div className="overflow-hidden border border-gray-200 rounded-xl min-w-97.75">
+          <div className="grid grid-cols-3 border-b border-gray-100 bg-white text-gray-600 font-medium text-sm py-4 px-4 rounded-t-lg">
+            <div className="">Source</div>
+            <div className="">Value/Estimate</div>
+            <div className=" text-right">Notes</div>
+          </div>
 
-        <div className=" overflow-hidden">
-          {propertyData.valueTable.map((row, index) => (
-            <div
-              key={index}
-              className={`grid grid-cols-3 p-4 text-gray-700 text-sm `}
-            >
-              <div className=" font-medium">{row.source}</div>
-              <div className={` ${row.color || "text-gray-900"} font-semibold`}>
-                {row.value}
+          <div className=" overflow-hidden">
+            {propertyData.valueTable.map((row, index) => (
+              <div
+                key={index}
+                className={`grid grid-cols-3 p-4 text-gray-700 text-sm `}
+              >
+                <div className=" font-medium">{row.source}</div>
+                <div className={` ${row.color || "text-gray-900"} font-semibold`}>
+                  {row.value}
+                </div>
+                <div className=" text-right text-gray-500 text-xs mt-0.5">
+                  {row.notes}
+                </div>
               </div>
-              <div className=" text-right text-gray-500 text-xs mt-0.5">
-                {row.notes}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 

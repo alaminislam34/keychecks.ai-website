@@ -17,7 +17,7 @@ const OverallAssessment = () => {
         </h2>
         {/* Description Text */}
         <p className="text-gray-700 mb-6 leading-relaxed">
-          This property presents an **excellent opportunity** in one of
+          This property presents an excellent opportunity in one of
           Richmond's most desirable locations. With very low flood risk,
           outstanding schools nearby, and exceptional transport links, it
           represents strong value in a stable, sought-after market.

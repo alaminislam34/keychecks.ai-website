@@ -6,11 +6,9 @@ export default function ReportHeader() {
       <div className="flex justify-between gap-4 items-center">
         <div>
           <h2 className="font-semibold tracking-wider text-xl md:text-2xl text-white">
-            <span className="bg-[#a474f1] text-white py-1 px-2.5 rounded-lg font-bold mr-2">
-              K
-            </span>
-            KeyChecks.
-            <span>ai</span>
+            
+            KeyChecks
+            
           </h2>
         </div>
         <div className="bg-[#aa82e9] rounded-xl">

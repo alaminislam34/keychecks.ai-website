@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <section className="pt-20 bg-dark">
-      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 space-y-6 flex flex-col items-center">
+      <div className="max-w-360 mx-auto w-[92%] lg:w-11/12 space-y-6 flex flex-col items-center">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-white w-full">
           <div className="space-y-4">
             {/* logo */}
@@ -14,11 +14,7 @@ export default function Footer() {
                 href={"/"}
                 className="font-semibold tracking-wider text-lg md:text-xl text-white"
               >
-                <span className="bg-primary text-white py-1 px-2.5 rounded-lg font-bold mr-2">
-                  K
-                </span>
-                KeyChecks.
-                <span className="text-[#bd97fa]">ai</span>
+                KeyChecks
               </Link>
             </div>
             <p className="text-sm md:text-base text-[#9ca3af]">
@@ -77,7 +73,7 @@ export default function Footer() {
         <div className="border-b border-gray h-0 w-full my-6"></div>
         <div>
           <p className="text-xs md:text-sm text-gray text-center">
-            KeyChecks.ai © 2025 • Same-day expert-reviewed property insights
+            KeyChecks © 2026 • Same-day expert-reviewed property insights
           </p>
         </div>
       </div>

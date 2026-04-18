@@ -35,7 +35,7 @@ const LocalCrimeSafety = () => {
     {
       title: "Burglary & Property Crime",
       content:
-        "Very low incidence — burglary remains well below of London aveage, with London aveage in the past 12 months. Vehicle-reast 12 months. Vehicle-related offences are rare.",
+        "Very low incidence — burglary remains well below the London average across the past 12 months. Vehicle-related offences are also rare.",
     },
     {
       title: "Other Common Offences",
@@ -96,20 +96,22 @@ const LocalCrimeSafety = () => {
       </div>
 
       {/* --- Main Information Table --- */}
-      <div className="border border-gray-200 rounded-lg overflow-hidden">
-        {tableData.map((row, index) => (
-          <div
-            key={index}
-            className={`grid grid-cols-3 border-b last:border-b-0 border-gray-200`}
-          >
-            <div className="col-span-1 bg-gray-50 p-4 font-semibold text-dark text-sm md:text-base">
-              {row.title}
+      <div className="max-[389px]:overflow-x-auto">
+        <div className="border border-gray-200 rounded-lg overflow-hidden min-w-97.75">
+          {tableData.map((row, index) => (
+            <div
+              key={index}
+              className={`grid grid-cols-3 border-b last:border-b-0 border-gray-200`}
+            >
+              <div className="col-span-1 bg-gray-50 p-4 font-semibold text-dark text-sm md:text-base">
+                {row.title}
+              </div>
+              <div className="col-span-2 text-xs md:text-sm p-4 text-gray-600 border-l border-gray-200">
+                {row.content}
+              </div>
             </div>
-            <div className="col-span-2 text-xs md:text-sm p-4 text-gray-600 border-l border-gray-200">
-              {row.content}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* --- Area Overview Section --- */}
@@ -118,14 +120,15 @@ const LocalCrimeSafety = () => {
           Area Overview
         </h3>
         <p className="text-gray-600 leading-relaxed mb-4">
-          The Richmond area around Maple Avenue maintains low level of reported
-          crime, typical for this highly desirable London neighbourhood.
+          The Richmond area around Maple Avenue maintains a low level of
+          reported crime, typical for this highly desirable London
+          neighbourhood.
         </p>
         <p className="text-gray-600 leading-relaxed">
           Most incidents relate to minor antisocial behaviour than serious or
           targeted offences. Burglary rates are very low and significantly below
-          the London average, reflecting raa&apos;s residential character
-          chracter strong community presence.
+          the London average, reflecting the area's residential character and
+          strong community presence.
         </p>
       </div>
 
@@ -136,10 +139,9 @@ const LocalCrimeSafety = () => {
         <div className="ml-3 italic">
           <span className="font-bold text-dark text-sm">Expert Insight:</span>{" "}
           <span className="text-dark text-sm">
-            Over the last year, crime h fhjs hhd remained consistently lowy low,
-            with indation of rising ocs data burglary or theft. Local shows 1
-            property-related inciident taxion thhis postcode cluster — psstally
-            for Greater London.
+            Over the last year, crime has remained consistently low, with no
+            clear indication of rising burglary or theft in this postcode
+            cluster compared with Greater London averages.
           </span>
         </div>
       </div>

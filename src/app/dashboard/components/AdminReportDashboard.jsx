@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import {
+  BarChart3,
+  CircleCheck,
   ClipboardList,
+  Clock3,
   Plus,
   Search,
   Send,
@@ -19,6 +22,7 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import AdminReportEditor from "./AdminReportEditor";
 
 // --- Main Dashboard Component ---
 const AdminReportDashboard = () => {
@@ -54,15 +58,22 @@ const AdminReportDashboard = () => {
 
   const handleUpdateStatus = (id, newStatus) => {
     setRequests((prev) =>
-      prev.map((req) => (req.id === id ? { ...req, status: newStatus } : req))
+      prev.map((req) => (req.id === id ? { ...req, status: newStatus } : req)),
     );
   };
 
   const filteredRequests = requests.filter(
     (req) =>
       req.address.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      req.userName.toLowerCase().includes(searchQuery.toLowerCase())
+      req.userName.toLowerCase().includes(searchQuery.toLowerCase()),
   );
+
+  const stats = {
+    total: requests.length,
+    pending: requests.filter((req) => req.status === "Pending").length,
+    processing: requests.filter((req) => req.status === "Processing").length,
+    completed: requests.filter((req) => req.status === "Completed").length,
+  };
 
   return (
     <div className="min-h-[80vh] p-6 md:p-8 font-sans">
@@ -70,7 +81,7 @@ const AdminReportDashboard = () => {
         <div className="mb-6 flex flex-col gap-4">
           <div>
             <h1 className="text-xl md:text-2xl font-bold text-gray-900 flex items-center gap-2">
-              <ClipboardList className="text-purple-600" size={24} />
+              <ClipboardList className="text-primary" size={24} />
               <span className="truncate">Report Management</span>
             </h1>
             <p className="text-gray-500 text-xs md:text-sm">
@@ -88,8 +99,53 @@ const AdminReportDashboard = () => {
               placeholder="Search by name or address..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 bg-white outline-none w-full shadow-sm text-sm"
+              className="pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary bg-white outline-none w-full shadow-sm text-sm"
             />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6">
+          <div className="rounded-xl border border-primary/10 bg-white p-4">
+            <p className="text-xs text-gray-500 uppercase font-semibold">
+              Total Requests
+            </p>
+            <p className="text-2xl font-bold text-dark mt-1">{stats.total}</p>
+            <p className="text-xs text-gray-500 mt-1 inline-flex items-center gap-1">
+              <BarChart3 size={12} /> Active queue
+            </p>
+          </div>
+          <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
+            <p className="text-xs text-amber-800 uppercase font-semibold">
+              Pending
+            </p>
+            <p className="text-2xl font-bold text-amber-800 mt-1">
+              {stats.pending}
+            </p>
+            <p className="text-xs text-amber-700 mt-1 inline-flex items-center gap-1">
+              <Clock3 size={12} /> Awaiting action
+            </p>
+          </div>
+          <div className="rounded-xl border border-blue-200 bg-blue-50 p-4">
+            <p className="text-xs text-blue-800 uppercase font-semibold">
+              Processing
+            </p>
+            <p className="text-2xl font-bold text-blue-800 mt-1">
+              {stats.processing}
+            </p>
+            <p className="text-xs text-blue-700 mt-1 inline-flex items-center gap-1">
+              <Zap size={12} /> In progress
+            </p>
+          </div>
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+            <p className="text-xs text-emerald-800 uppercase font-semibold">
+              Completed
+            </p>
+            <p className="text-2xl font-bold text-emerald-800 mt-1">
+              {stats.completed}
+            </p>
+            <p className="text-xs text-emerald-700 mt-1 inline-flex items-center gap-1">
+              <CircleCheck size={12} /> Sent reports
+            </p>
           </div>
         </div>
 
@@ -114,7 +170,7 @@ const AdminReportDashboard = () => {
                   <span className="text-xs text-gray-400">{req.date}</span>
                   <button
                     onClick={() => handleOpenReportEditor(req)}
-                    className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-1"
+                    className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-1"
                   >
                     <Plus size={16} /> Create
                   </button>
@@ -162,7 +218,7 @@ const AdminReportDashboard = () => {
                     <td className="px-6 py-4 text-right">
                       <button
                         onClick={() => handleOpenReportEditor(req)}
-                        className="inline-flex items-center gap-2 bg-purple-50 text-purple-700 px-4 py-2 rounded-lg font-medium hover:bg-purple-600 hover:text-white transition-all"
+                        className="inline-flex items-center gap-2 bg-purple-50 text-primary px-4 py-2 rounded-lg font-medium hover:bg-primary hover:text-white transition-all"
                       >
                         <Plus size={16} /> Create Report
                       </button>
@@ -176,10 +232,10 @@ const AdminReportDashboard = () => {
       </div>
 
       {isModalOpen && (
-        <ReportEditorModal
+        <AdminReportEditor
           request={selectedRequest}
           onClose={() => setIsModalOpen(false)}
-          onSuccess={(id) => handleUpdateStatus(id, "Completed")}
+          onSave={(id) => handleUpdateStatus(id, "Completed")}
         />
       )}
     </div>
@@ -188,15 +244,28 @@ const AdminReportDashboard = () => {
 
 // --- Responsive Status Badge ---
 const StatusBadge = ({ status }) => {
-  const styles = {
-    Pending: "bg-amber-50 text-amber-700 border-amber-100",
-    Processing: "bg-blue-50 text-blue-700 border-blue-100",
-    Completed: "bg-emerald-50 text-emerald-700 border-emerald-100",
+  const styleMap = {
+    Pending: {
+      className: "bg-amber-50 text-amber-700 border-amber-100",
+      dotClass: "bg-amber-500",
+    },
+    Processing: {
+      className: "bg-blue-50 text-blue-700 border-blue-100",
+      dotClass: "bg-blue-500",
+    },
+    Completed: {
+      className: "bg-emerald-50 text-emerald-700 border-emerald-100",
+      dotClass: "bg-emerald-500",
+    },
   };
+
+  const selected = styleMap[status] || styleMap.Pending;
+
   return (
     <span
-      className={`px-2.5 py-1 rounded-full text-[10px] md:text-xs font-bold border ${styles[status]}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] md:text-xs font-bold border ${selected.className}`}
     >
+      <span className={`w-1.5 h-1.5 rounded-full ${selected.dotClass}`} />
       {status}
     </span>
   );
@@ -219,7 +288,7 @@ const ReportEditorModal = ({ request, onClose, onSuccess }) => {
     <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/60 backdrop-blur-sm">
       <div className="bg-white w-full max-w-4xl h-[90vh] md:h-auto md:max-h-[90vh] rounded-t-3xl md:rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all">
         {/* Modal Header */}
-        <div className="p-4 md:p-6 bg-purple-600 text-white flex justify-between items-center shrink-0">
+        <div className="p-4 md:p-6 bg-primary text-white flex justify-between items-center shrink-0">
           <div className="max-w-[80%]">
             <h2 className="text-lg font-bold flex items-center gap-2 truncate">
               <CheckCircle size={20} className="shrink-0" /> Edit Report
@@ -350,7 +419,7 @@ const ReportEditorModal = ({ request, onClose, onSuccess }) => {
               <h3 className="flex items-center gap-2 text-md font-bold text-purple-800">
                 <ShieldCheck size={20} /> Legal Insights
               </h3>
-              <span className="bg-purple-600 text-white text-[9px] px-2 py-1 rounded font-bold uppercase shrink-0">
+              <span className="bg-primary text-white text-[9px] px-2 py-1 rounded font-bold uppercase shrink-0">
                 Premium
               </span>
             </div>
@@ -358,7 +427,7 @@ const ReportEditorModal = ({ request, onClose, onSuccess }) => {
               name="legalTitleReview"
               rows="4"
               onChange={handleInputChange}
-              className="w-full p-3 bg-white border border-purple-100 rounded-xl text-sm focus:ring-2 focus:ring-purple-500 outline-none shadow-inner"
+              className="w-full p-3 bg-white border border-purple-100 rounded-xl text-sm focus:ring-2 focus:ring-primary outline-none shadow-inner"
               placeholder="Detailed legal analysis..."
             ></textarea>
           </div>
@@ -378,7 +447,7 @@ const ReportEditorModal = ({ request, onClose, onSuccess }) => {
                 onSuccess(request.id);
                 onClose();
               }}
-              className="w-full md:flex-1 py-3 bg-purple-600 text-white rounded-xl font-bold shadow-lg shadow-purple-200 flex items-center justify-center gap-2 order-1 md:order-2 active:scale-95 transition-all"
+              className="w-full md:flex-1 py-3 bg-primary text-white rounded-xl font-bold shadow-lg shadow-purple-200 flex items-center justify-center gap-2 order-1 md:order-2 active:scale-95 transition-all"
             >
               <Send size={18} /> Finalize & Send
             </button>

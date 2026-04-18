@@ -49,7 +49,7 @@ export const keys = [
 function WhyKeyChecksExists() {
   return (
     <section className="py-8">
-      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
+      <div className="max-w-360 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
         <div className="py-12">
           <SectionTitle title={"Why KeyChecks Exists"} color={"text-dark"} />
         </div>

@@ -35,7 +35,7 @@ const CheckoutSection = () => {
               <input
                 type="text"
                 placeholder="John Smith"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7C3AED] focus:border-transparent outline-none placeholder-gray-400"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none placeholder-gray-400"
               />
             </div>
 
@@ -47,7 +47,7 @@ const CheckoutSection = () => {
               <input
                 type="email"
                 placeholder="john@example.com"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7C3AED] focus:border-transparent outline-none placeholder-gray-400"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none placeholder-gray-400"
               />
               <p className="text-xs text-gray-400 mt-2 ml-1">
                 Your report will be delivered to this email
@@ -62,7 +62,7 @@ const CheckoutSection = () => {
               <input
                 type="text"
                 placeholder="42 Maple Avenue, Richmond, TW9 4BH"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7C3AED] focus:border-transparent outline-none placeholder-gray-400"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none placeholder-gray-400"
               />
               <p className="text-xs text-gray-400 mt-2 ml-1">
                 Full address including postcode
@@ -77,13 +77,13 @@ const CheckoutSection = () => {
               <textarea
                 rows="4"
                 placeholder="Any specific questions or areas of concern?"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7C3AED] focus:border-transparent outline-none placeholder-gray-400 resize-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none placeholder-gray-400 resize-none"
               ></textarea>
             </div>
 
             {/* Submit Button */}
             <div className="pt-4">
-              <button className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-purple-200 text-lg">
+              <button className="w-full bg-primary hover:bg-primary text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-purple-200 text-lg">
                 Proceed to Payment - £19
               </button>
               <p className="text-center text-xs text-gray mt-4">
@@ -96,7 +96,7 @@ const CheckoutSection = () => {
         {/* Right Column: Order Summary & Features */}
         <div className="md:col-span-5 space-y-6">
           {/* Purple Order Summary Card */}
-          <div className="bg-[#7333DE] text-white rounded-3xl p-8 shadow-xl">
+          <div className="bg-primary text-white rounded-3xl p-8 shadow-xl">
             <h2 className="text-2xl font-semibold mb-6">Order Summary</h2>
 
             <div className="bg-linear-to-r from-white/10 to-white/10 rounded-xl p-5 mb-6">

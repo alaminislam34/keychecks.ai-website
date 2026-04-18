@@ -8,7 +8,7 @@ import PageTitle from "../components/PageTitle/PageTitle";
 function Privacy() {
   return (
     <section>
-      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 py-24">
+      <div className="max-w-360 mx-auto w-[92%] lg:w-11/12 py-24">
         <PageTitle
           title={"Legal Information"}
           subTitle={"Privacy, terms, and data transparency."}

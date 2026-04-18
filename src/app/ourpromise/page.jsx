@@ -2,15 +2,17 @@
 
 import React from "react";
 import {
+  BadgeCheck,
   CircleCheckBig,
   Clock4,
   FileText,
   RefreshCw,
+  ShieldCheck,
   Shield,
+  Timer,
   TrendingUp,
   Zap,
 } from "lucide-react";
-import SectionTitle from "../components/ui/SectionTitle/SectionTitle";
 import PageTitle from "../components/PageTitle/PageTitle";
 
 export const features = [
@@ -49,7 +51,7 @@ export const features = [
 function OurPromise() {
   return (
     <section className="py-8 pb-24">
-      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
+      <div className="max-w-360 mx-auto w-[92%] lg:w-11/12 text-center space-y-6 flex flex-col items-center">
         <PageTitle
           title={"Our Promise"}
           subTitle={"Clear, Honest. Same-day."}
@@ -97,6 +99,46 @@ function OurPromise() {
             Your confidence matters to us. If something doesn't feel right,
             we'll make it right — no questions asked.
           </p>
+        </div>
+
+        <div className="w-full max-w-5xl mx-auto rounded-2xl border border-primary/15 bg-white p-6 md:p-10">
+          <h3 className="text-dark text-xl md:text-2xl font-bold text-center mb-2">
+            Trust Guarantee
+          </h3>
+          <p className="text-gray-500 text-sm md:text-base text-center mb-8">
+            Every KeyChecks report is backed by a clear service commitment.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            <div className="rounded-xl border border-primary/10 bg-primary/5 p-5 text-left">
+              <BadgeCheck className="text-primary mb-3" size={22} />
+              <h4 className="text-dark font-semibold mb-2">
+                Data Transparency
+              </h4>
+              <p className="text-sm text-gray-500">
+                We clearly show where insights come from so you can make
+                evidence-based decisions.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-primary/10 bg-primary/5 p-5 text-left">
+              <Timer className="text-primary mb-3" size={22} />
+              <h4 className="text-dark font-semibold mb-2">On-Time Delivery</h4>
+              <p className="text-sm text-gray-500">
+                If a report is delayed beyond our promised window, we prioritize
+                your case with direct support.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-primary/10 bg-primary/5 p-5 text-left">
+              <ShieldCheck className="text-primary mb-3" size={22} />
+              <h4 className="text-dark font-semibold mb-2">Fair Resolution</h4>
+              <p className="text-sm text-gray-500">
+                If anything is incomplete or unclear, we correct it promptly or
+                offer a fair refund path.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

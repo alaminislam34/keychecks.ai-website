@@ -70,23 +70,25 @@ const CouncilTax = () => {
       </div>
 
       {/* --- Main Information Table --- */}
-      <div className="border border-gray-200 rounded-lg overflow-hidden mb-6">
-        {tableRows.map((row, index) => (
-          <div
-            key={index}
-            // Responsive grid: title takes 1 column, content takes 2 on larger screens
-            className={`grid grid-cols-1 sm:grid-cols-3 ${
-              index % 2 === 0 ? "bg-white" : "bg-gray-50/50"
-            } border-b last:border-b-0 border-gray-200`}
-          >
-            <div className="col-span-1 p-4 font-medium text-gray-700">
-              {row.title}
+      <div className="max-[389px]:overflow-x-auto">
+        <div className="border border-gray-200 rounded-lg overflow-hidden mb-6 min-w-97.75">
+          {tableRows.map((row, index) => (
+            <div
+              key={index}
+              // Responsive grid: title takes 1 column, content takes 2 on larger screens
+              className={`grid grid-cols-1 sm:grid-cols-3 ${
+                index % 2 === 0 ? "bg-white" : "bg-gray-50/50"
+              } border-b last:border-b-0 border-gray-200`}
+            >
+              <div className="col-span-1 p-4 font-medium text-gray-700">
+                {row.title}
+              </div>
+              <div className="col-span-2 p-4 text-gray-600 border-t sm:border-t-0 sm:border-l border-gray-200">
+                {row.content}
+              </div>
             </div>
-            <div className="col-span-2 p-4 text-gray-600 border-t sm:border-t-0 sm:border-l border-gray-200">
-              {row.content}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* --- Expert Insight (Info Box) --- */}

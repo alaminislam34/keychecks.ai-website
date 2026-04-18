@@ -40,12 +40,14 @@ Prices here have been rising steadily, and similar houses nearby have sold betwe
   },
 };
 
-const ScoreBox = ({ title, score }) => (
-  <div className="flex flex-col items-center justify-center p-3 rounded-lg bg-white/10 text-white min-w-20">
-    <p className="text-3xl font-bold">{score}</p>
-    <p className="text-xs mt-1 text-center">{title}</p>
-  </div>
-);
+const confidenceBreakdown = [
+  { title: "Area Safety", key: "areaSafety" },
+  { title: "Transport", key: "transport" },
+  { title: "Schools", key: "schools" },
+  { title: "Value Stability", key: "valueStability" },
+  { title: "Environment", key: "environment" },
+  { title: "Planning", key: "planning" },
+];
 
 const BuyersSummary = () => {
   return (
@@ -102,31 +104,26 @@ const BuyersSummary = () => {
           KeyChecks Confidence Score
         </h3>
 
-        <div className="grid grid-cols-3 gap-3 mb-5">
-          <ScoreBox
-            title="Area Safety"
-            score={summaryData.confidenceScores.areaSafety}
-          />
-          <ScoreBox
-            title="Transport"
-            score={summaryData.confidenceScores.transport}
-          />
-          <ScoreBox
-            title="Schools"
-            score={summaryData.confidenceScores.schools}
-          />
-          <ScoreBox
-            title="Value Stability"
-            score={summaryData.confidenceScores.valueStability}
-          />
-          <ScoreBox
-            title="Environment"
-            score={summaryData.confidenceScores.environment}
-          />
-          <ScoreBox
-            title="Planning"
-            score={summaryData.confidenceScores.planning}
-          />
+        <div className="space-y-3 mb-6">
+          {confidenceBreakdown.map((item) => {
+            const score = summaryData.confidenceScores[item.key];
+            const percent = Math.min(100, Math.max(0, score * 10));
+
+            return (
+              <div key={item.key}>
+                <div className="flex items-center justify-between text-sm mb-1">
+                  <span>{item.title}</span>
+                  <span className="font-semibold">{score}/10</span>
+                </div>
+                <div className="h-2.5 bg-white/20 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-accent rounded-full"
+                    style={{ width: `${percent}%` }}
+                  />
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <div className="flex flex-col items-center justify-center p-6 mt-4 border-t border-white/20">

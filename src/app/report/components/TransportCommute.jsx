@@ -77,20 +77,22 @@ const TransportCommute = () => {
         </div>
       </div>
 
-      <div className="border border-gray-200 rounded-lg overflow-hidden mb-6">
-        {transportData.tableRows.map((row, index) => (
-          <div
-            key={index}
-            className={`grid grid-cols-1 sm:grid-cols-3 border-b last:border-b-0 border-gray-200`}
-          >
-            <div className="col-span-1 p-4 font-medium text-dark bg-gray-50">
-              {row.title}
+      <div className="max-[389px]:overflow-x-auto">
+        <div className="border border-gray-200 rounded-lg overflow-hidden mb-6 min-w-97.75">
+          {transportData.tableRows.map((row, index) => (
+            <div
+              key={index}
+              className={`grid grid-cols-1 sm:grid-cols-3 border-b last:border-b-0 border-gray-200`}
+            >
+              <div className="col-span-1 p-4 font-medium text-dark bg-gray-50">
+                {row.title}
+              </div>
+              <div className="col-span-2 p-4 text-gray border-t sm:border-t-0 sm:border-l border-gray-200">
+                {row.content}
+              </div>
             </div>
-            <div className="col-span-2 p-4 text-gray border-t sm:border-t-0 sm:border-l border-gray-200">
-              {row.content}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <div className="p-4 flex items-start bg-pink-50 border-l-4 border-pink-500 rounded-r-md">

@@ -81,44 +81,46 @@ const EnergyPerformanceCertificate = () => {
       </div>
 
       {/* Detail Table */}
-      <div className="border border-gray-200 rounded-xl overflow-hidden mb-6">
-        <table className="min-w-full divide-y divide-gray-200">
-          <tbody>
-            <tr className="flex">
-              <td className="w-2/5 p-4 text-sm font-medium text-gray-800 bg-gray-50 shrink-0">
-                What this means
-              </td>
-              <td className="w-3/5 p-4 text-sm text-gray-600">
-                Good insulation and double glazing keep heating costs low.
-              </td>
-            </tr>
-            <tr className="flex">
-              <td className="w-2/5 p-4 text-sm font-medium text-gray-800 bg-gray-50 shrink-0">
-                Typical Rating for Area
-              </td>
-              <td className="w-3/5 p-4 text-sm text-gray-600">
-                Properties of this type in TW9 usually achieve ratings between C
-                and B.
-              </td>
-            </tr>
-            <tr className="flex">
-              <td className="w-2/5 p-4 text-sm font-medium text-gray-800 bg-gray-50 shrink-0">
-                EPC Validity
-              </td>
-              <td className="w-3/5 p-4 text-sm text-gray-600">
-                Valid until 2033 — no new assessment required before purchase.
-              </td>
-            </tr>
-            <tr className="flex">
-              <td className="w-2/5 p-4 text-sm font-medium text-gray-800 bg-gray-50 shrink-0">
-                Recommendation
-              </td>
-              <td className="w-3/5 p-4 text-sm text-gray-600">
-                Installing solar panels (£4-6k) could bring rating by £180/year.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="max-[389px]:overflow-x-auto">
+        <div className="border border-gray-200 rounded-xl overflow-hidden mb-6 min-w-97.75">
+          <table className="min-w-full divide-y divide-gray-200">
+            <tbody>
+              <tr className="flex">
+                <td className="w-2/5 p-4 text-sm font-medium text-gray-800 bg-gray-50 shrink-0">
+                  What this means
+                </td>
+                <td className="w-3/5 p-4 text-sm text-gray-600">
+                  Good insulation and double glazing keep heating costs low.
+                </td>
+              </tr>
+              <tr className="flex">
+                <td className="w-2/5 p-4 text-sm font-medium text-gray-800 bg-gray-50 shrink-0">
+                  Typical Rating for Area
+                </td>
+                <td className="w-3/5 p-4 text-sm text-gray-600">
+                  Properties of this type in TW9 usually achieve ratings between C
+                  and B.
+                </td>
+              </tr>
+              <tr className="flex">
+                <td className="w-2/5 p-4 text-sm font-medium text-gray-800 bg-gray-50 shrink-0">
+                  EPC Validity
+                </td>
+                <td className="w-3/5 p-4 text-sm text-gray-600">
+                  Valid until 2033 — no new assessment required before purchase.
+                </td>
+              </tr>
+              <tr className="flex">
+                <td className="w-2/5 p-4 text-sm font-medium text-gray-800 bg-gray-50 shrink-0">
+                  Recommendation
+                </td>
+                <td className="w-3/5 p-4 text-sm text-gray-600">
+                  Installing solar panels (£4-6k) could bring rating by £180/year.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* Expert Insight */}

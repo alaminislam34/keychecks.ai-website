@@ -1,256 +1,220 @@
-import React from "react";
-import SectionTitle from "../../ui/SectionTitle/SectionTitle";
-import { Check } from "lucide-react";
-import Link from "next/link";
+"use client";
 
-export const pricing = [];
+import { Check, X } from "lucide-react";
+import React, { useState } from "react";
+import PageTitle from "../../PageTitle/PageTitle";
+import PaymentModal from "../../shared/Modal/Payment";
+// import PageTitle from "../components/PageTitle/PageTitle";
+
+const tiers = [
+  {
+    name: "SmartCheck",
+    price: "£29",
+    subtitle: "One-off",
+    description: "Core same-day report for confident pre-offer decisions.",
+    cta: "Get SmartCheck",
+    popular: false,
+  },
+  {
+    name: "SmartCheck + Title",
+    price: "£45",
+    subtitle: "One-off",
+    description: "SmartCheck plus title-focused legal insight in one package.",
+    cta: "Get SmartCheck + Title",
+    popular: true,
+  },
+  {
+    name: "5-Report Credits",
+    price: "£99",
+    subtitle: "Bundle",
+    description: "Best for repeat buyers, brokers, and active deal sourcers.",
+    cta: "Buy 5-Report Credits",
+    popular: false,
+  },
+  {
+    name: "Investor Pack",
+    price: "£59",
+    subtitle: "One-off",
+    description: "Added investor context with strategy-focused guidance.",
+    cta: "Get Investor Pack",
+    popular: false,
+  },
+  {
+    name: "Pro Monthly",
+    price: "£49/month",
+    subtitle: "Subscription",
+    description:
+      "Ongoing access for professionals who review properties monthly.",
+    cta: "Start Pro Monthly",
+    popular: false,
+  },
+];
+
+const comparisonRows = [
+  {
+    feature: "Core property checks",
+    values: ["Yes", "Yes", "Yes", "Yes", "Yes"],
+  },
+  {
+    feature: "Title insight included",
+    values: ["Add-On", "Included", "Add-On", "Add-On", "Included"],
+  },
+  {
+    feature: "Investor-focused guidance",
+    values: ["No", "No", "No", "Included", "Included"],
+  },
+  {
+    feature: "Multi-report credits",
+    values: ["No", "No", "5 Credits", "No", "Monthly Access"],
+  },
+  {
+    feature: "Priority delivery",
+    values: ["Standard", "Priority", "Priority", "Priority", "Priority"],
+  },
+];
+
+function CellValue({ value }) {
+  if (value === "Yes" || value === "Included") {
+    return (
+      <span className="inline-flex items-center gap-1 text-accent font-medium">
+        <Check className="w-4 h-4" />
+        {value}
+      </span>
+    );
+  }
+
+  if (value === "No") {
+    return (
+      <span className="inline-flex items-center gap-1 text-red-600 font-medium">
+        <X className="w-4 h-4" />
+        {value}
+      </span>
+    );
+  }
+
+  return <span className="text-dark font-medium">{value}</span>;
+}
 
 function Pricing() {
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [selectedTier, setSelectedTier] = useState(null);
+
   return (
-    <section id="pricing" className="py-20 bg-primary/2">
-      <div className="max-w-310 mx-auto w-[92%] lg:w-11/12">
+    <section className="py-20 bg-primary/2">
+      <div className="max-w-360 mx-auto w-[92%] lg:w-11/12">
         <div className="text-center pb-12">
-          <SectionTitle title={"Pricing"} color={"text-dark"} />
-          <p className="text-lg md:text-xl text-gray">
-            Handcrafted, human-reviewed, written in plain English.
+          <PageTitle
+            title={"Pricing"}
+            subTitle={"Simple plans for every buyer."}
+          />
+          <p className="md:text-lg text-gray-600">
+            Choose the option that matches your property search stage.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white space-y-6 p-6 md:p-8 flex my-4 justify-between flex-col rounded-2xl border-2 shadow-lg shadow-primary/10 duration-300 border-primary/10 hover:border-primary">
-            <div className="space-y-2 text-center">
-              <h3 className="text-xl lg:text-2xl font-semibold text-dark">
-                SmartReport
-              </h3>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
-                £29
-              </h1>
-              <p className="text-xs md:text-sm text-gray">
-                A complete pre-offer property report, delivered same day.
-              </p>
-            </div>
-            <ul className="flex flex-col gap-2">
-              <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                <span>
-                  <Check className="text-primary" />
-                </span>
-                Price guidance & comparable sales
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                <span>
-                  <Check className="text-primary" />
-                </span>
-                EPC, flood, crime & schools
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                <span>
-                  <Check className="text-primary" />
-                </span>
-                Broadband & connectivity
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                <span>
-                  <Check className="text-primary" />
-                </span>
-                Running costs, council tax, local constraints
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                <span>
-                  <Check className="text-primary" />
-                </span>
-                Questions for estate agents & solicitors
-              </li>
-            </ul>
-            <div className="flex items-center justify-center">
-              <Link
-                href={"#"}
-                className={`truncate duration-300 py-3 px-6 w-full text-center bg-linear-to-r hover:scale-105 from-primary to-primary/90 text-white rounded-xl  font-semibold tracking-wider`}
+        <div className="flex flex-wrap justify-center items-center gap-6">
+          {tiers.map((tier) => (
+            <article
+              key={tier.name}
+              className={`rounded-2xl max-w-100 bg-white p-6 flex flex-col justify-between shadow-md transition-all ${
+                tier.popular
+                  ? "border-2 border-primary scale-[1.03] xl:scale-[1.06]"
+                  : "border border-primary/15"
+              }`}
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-lg md:text-xl font-semibold text-dark">
+                    {tier.name}
+                  </h3>
+                  {tier.popular && (
+                    <span className="text-xs font-semibold py-1 px-3 rounded-full bg-primary text-white">
+                      Most Popular
+                    </span>
+                  )}
+                </div>
+
+                <div>
+                  <p className="text-3xl md:text-4xl font-bold text-primary">
+                    {tier.price}
+                  </p>
+                  <p className="text-sm text-gray-500 mt-1">{tier.subtitle}</p>
+                </div>
+
+                <p className="text-sm text-gray-600">{tier.description}</p>
+              </div>
+
+              <button
+                className={`mt-6 w-full rounded-xl py-3 px-4 text-center font-semibold duration-300 ${
+                  tier.popular
+                    ? "bg-primary text-white hover:opacity-90"
+                    : "bg-primary/10 text-primary hover:bg-primary/20"
+                }`}
+                onClick={() => {
+                  setSelectedTier(tier);
+                  setShowPaymentModal(true);
+                }}
               >
-                Get SmartReport
-              </Link>
-            </div>
-          </div>
-          {/* popular */}
-          <div className="bg-linear-to-br from-primary to-[#7A39EA] space-y-6 flex justify-between flex-col p-6 md:p-8 relative rounded-2xl border-2 shadow-lg shadow-primary/10 duration-300 border-primary/10 text-white">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-[#A78BFA] font-semibold font-inter backdrop-blur-3xl py-1 px-4 text-sm tracking-wider">
-              Most Popular
-            </div>
-            <div className="space-y-2 text-center">
-              <h3 className="text-xl lg:text-2xl font-semibold">
-                Investor Pack
-              </h3>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-                £59
-              </h1>
-              <p className="text-xs md:text-sm">
-                For investors and deal sourcers who want deeper insight.
-              </p>
-            </div>
-            <ul className="flex flex-col gap-2">
-              <li className="flex items-center gap-1.5 text-xs md:text-sm">
-                <span>
-                  <Check />
-                </span>
-                Everything in SmartReport
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm">
-                <span>
-                  <Check />
-                </span>
-                Rental estimates & typical yields
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm">
-                <span>
-                  <Check />
-                </span>
-                5-year growth trend
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm">
-                <span>
-                  <Check />
-                </span>
-                Area demand indicators
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm">
-                <span>
-                  <Check />
-                </span>
-                Suggested investor strategy
-              </li>
-            </ul>
-            <div className="flex items-center justify-center">
-              <Link
-                href={"#"}
-                className={`truncate duration-300 py-3 px-6 w-full text-center bg-white hover:scale-105 text-primary rounded-xl font-semibold tracking-wider`}
-              >
-                Get Investor Pack
-              </Link>
-            </div>
-          </div>
-          <div className="bg-white space-y-6 p-6 md:p-8 flex my-4 justify-between flex-col rounded-2xl border-2 shadow-lg shadow-primary/10 duration-300 border-primary/10 hover:border-primary">
-            <div className="space-y-2 text-center">
-              <h3 className="text-xl lg:text-2xl font-semibold text-dark">
-                5-Report Bundle
-              </h3>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
-                £99
-              </h1>
-              <p className="text-xs md:text-sm text-gray">
-                Save £46 with bundle credits
-              </p>
-            </div>
-            <ul className="flex flex-col gap-2">
-              <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                <span>
-                  <Check className="text-primary" />
-                </span>
-                Five handcrafted SmartReports
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                <span>
-                  <Check className="text-primary" />
-                </span>
-                Credits never expire
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                <span>
-                  <Check className="text-primary" />
-                </span>
-                Priority delivery
-              </li>
-              <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                <span>
-                  <Check className="text-primary" />
-                </span>
-                Perfect for investors and multi-property buyers
-              </li>
-            </ul>
-            <div className="flex items-center justify-center">
-              <Link
-                href={"#"}
-                className={`truncate duration-300 py-3 px-6 w-full text-center bg-linear-to-r hover:scale-105 from-primary to-primary/90 text-white rounded-xl  font-semibold tracking-wider`}
-              >
-                Get The Bundle
-              </Link>
-            </div>
-          </div>
+                {tier.cta}
+              </button>
+            </article>
+          ))}
         </div>
-        <div>
-          <div className="bg-primary/2 max-w-3xl mx-auto mt-12 shadow-lg space-y-6 p-8 flex justify-between flex-col rounded-2xl border-2 shadow-primary/10 duration-300 border-primary/10 ">
-            <div className="space-y-2 text-center">
-              <h3 className="text-xl lg:text-2xl font-semibold text-dark">
-                Title & Plan Legal Insight
-              </h3>
-              <h1 className="text-3xl md:text-4xl font-bold text-primary">
-                £19{" "}
-                <span className="text-sm md:text-base text-gray font-normal">
-                  (Add-On)
-                </span>
-              </h1>
-              <p className="text-xs md:text-sm text-gray">
-                Expert review of the official Land Registry Title Register &
-                Title Plan.
-              </p>
-            </div>
-            <p className="text-xs md:text-sm text-dark text-center py-2">
-              We explain in clear English:
+
+        <div className="mt-14 bg-white rounded-2xl border border-primary/15 overflow-hidden shadow-md">
+          <div className="px-6 py-5 border-b border-primary/10 bg-primary/5">
+            <h2 className="text-xl md:text-2xl text-dark font-semibold">
+              Feature Comparison
+            </h2>
+            <p className="text-sm text-gray-600 mt-1">
+              Compare what is included in each pricing option.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <ul className="flex flex-col gap-2">
-                <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                  <span>
-                    <Check className="text-primary" />
-                  </span>
-                  Restrictive covenants
-                </li>
-                <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                  <span>
-                    <Check className="text-primary" />
-                  </span>
-                  Rights of way
-                </li>
-                <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                  <span>
-                    <Check className="text-primary" />
-                  </span>
-                  Boundary lines
-                </li>
-              </ul>
-              <ul className="flex flex-col gap-2">
-                <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                  <span>
-                    <Check className="text-primary" />
-                  </span>
-                  Easements
-                </li>
-                <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                  <span>
-                    <Check className="text-primary" />
-                  </span>
-                  Shared access notes
-                </li>
-                <li className="flex items-center gap-1.5 text-xs md:text-sm text-dark">
-                  <span>
-                    <Check className="text-primary" />
-                  </span>
-                  Charges / rentcharges
-                </li>
-              </ul>
-            </div>
-            <div className="flex items-center justify-center">
-              <Link
-                href={"#"}
-                className={`truncate duration-300 py-3 px-6 w-full text-center bg-linear-to-r hover:scale-105 from-primary to-primary/90 text-white rounded-xl  font-semibold tracking-wider`}
-              >
-                Add Legal Insight
-              </Link>
-            </div>
-            <p className="text-xs md:text-sm text-gray text-center">
-              We can order the Title Register (£3) and Title Plan (£3) at cost.
-            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="min-w-225 w-full">
+              <thead className="bg-white">
+                <tr className="border-b border-primary/10">
+                  <th className="text-left px-5 py-4 text-sm font-semibold text-dark">
+                    Feature
+                  </th>
+                  {tiers.map((tier) => (
+                    <th
+                      key={tier.name}
+                      className="text-left px-5 py-4 text-sm font-semibold text-dark"
+                    >
+                      {tier.name}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonRows.map((row) => (
+                  <tr key={row.feature} className="border-b border-primary/10">
+                    <td className="px-5 py-4 text-sm font-medium text-dark">
+                      {row.feature}
+                    </td>
+                    {row.values.map((value, idx) => (
+                      <td
+                        key={`${row.feature}-${idx}`}
+                        className="px-5 py-4 text-sm"
+                      >
+                        <CellValue value={value} />
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+
+      <PaymentModal
+        isOpen={showPaymentModal}
+        onClose={() => setShowPaymentModal(false)}
+        selectedTier={selectedTier}
+      />
     </section>
   );
 }

@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import SectionTitle from "../components/ui/SectionTitle/SectionTitle";
 import {
   CircleCheckBig,
   Clock4,
   FileText,
+  Globe,
   Shield,
   TrendingUp,
   Zap,
@@ -47,12 +47,59 @@ export const features = [
   },
 ];
 function About() {
+  const dataSources = [
+    "HM Land Registry",
+    "Environment Agency flood data",
+    "Valuation Office Agency council tax data",
+    "Ofsted school ratings",
+    "Department for Transport commute and infrastructure datasets",
+    "UK police and public safety data",
+  ];
+
   return (
-    <>
+    <section className="pb-20">
       <Banner />
       <Reports />
       <OurMission />
-    </>
+
+      <div className="max-w-360 mx-auto w-[92%] lg:w-11/12 mt-14 space-y-10">
+        <div className="rounded-2xl border border-primary/15 bg-white shadow-sm p-6 md:p-10">
+          <h2 className="text-dark text-2xl md:text-3xl font-bold mb-4">
+            Why We Built This
+          </h2>
+          <p className="text-gray-600 text-sm md:text-lg leading-relaxed">
+            KeyChecks was built to reduce uncertainty in property buying. Too
+            many buyers only discover critical issues late in the process,
+            after money and momentum are already committed. We created KeyChecks
+            to make key risks, costs, and decision points clear earlier so
+            people can buy with confidence.
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-primary/15 bg-primary/5 p-6 md:p-10">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="p-2.5 rounded-lg bg-primary text-white">
+              <Globe size={20} />
+            </span>
+            <h3 className="text-dark text-xl md:text-2xl font-semibold">
+              Data Sources We Use
+            </h3>
+          </div>
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {dataSources.map((source) => (
+              <li
+                key={source}
+                className="flex items-start gap-2 bg-white border border-primary/10 rounded-xl p-3"
+              >
+                <CircleCheckBig className="text-primary mt-0.5" size={18} />
+                <span className="text-dark text-sm md:text-base">{source}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }
 
